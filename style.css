@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Edu NSW ACT Cursive", cursive;
+}
+
+body {
+  padding: 50px;
+  background-color: rgb(221, 130, 130);
+}
+/* Syntax */
+/* element{
+    property:value;
+} */
+/* div {
+  background-color: rgb(47, 134, 243);
+  background-image: url("https://th.wallhaven.cc/small/qz/qz13pl.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+  
+} */
+/* div{
+  display: flex;
+ }
+ img{
+  position: absolute;
+  z-index: 3;
+ } */
+/* p {
+  border: 1px solid red;
+  padding: 20px;
+  margin: 10px 20px; */
+/* border: 7px solid black;
+  outline: 10px solid red;
+  border-radius: 50%; */
+
+/* width: 600px;
+  height: 600px; */
+/* border-style: solid;
+  border-width: 5px;
+  border-color: red; */
+/* border: 10px solid blue;
+  border-radius: 50%; */
+/* } */
+img {
+  /* height: 150px;
+    width: 150px; */
+  /* border-bottom-left-radius: 100%; */
+  /* border-radius: 50%; */
+  /* border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%; */
+  /* border-radius: 50%;
+  height: 150px;
+  width: 150px; */
+}
+/* table {
+        border: 2px solid black;
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 2px solid black;
+      } */
+
+/* li {
+        border: 1px solid black;
+      }
+
+      a {
+        color: red;
+      }
+      .umesh {
+        color: tomato;
+        background-color: black;
+      }
+      .ug{
+        background-color: yellow;
+      } */
+
+/* Box modal */
+/* 1. content  2. padding 3.border  4.margin */
+
+img {
+  /* height: 90vh;
+  width: 100vw; */
+  /* position: absolute; */
+  /* z-index: 1;
+  top: 0; */
+  /* right: 0; */
+}
+
+/* h1 {
+  color: red;
+  font-weight: 500;
+}
+p {
+  font-size: 20px;
+  font-style: unset;
+  
+} */
+/* div {
+  width: 900px;
+  border: 1px solid black;
+}
+img {
+  width: 100%;
+  height: 100vh;
+} */
+
+/* Display */
+.container {
+  /* display: inline;
+  grid-template-rows: repeat(10, 100px); */
+  /* grid-template-columns: repeat(4, 350px);
+  gap: 80px; */
+  /* height: 100vh;
+  display: flex;
+  grid-template-columns: repeat(3, 400px);
+  flex-wrap: wrap; */
+  /*   align-items: center; */ /* top and bottom align */
+  /*  justify-content: space-evenly;  */ /* left and right align */
+
+  /* overflow: hidden; */
+  height: 80vh;
+  border: 5px solid black;
+  /* position: relative; */
+}
+
+/* .para {
+  display: none;
+  visibility: hidden;
+  color: red;
+} */
+/* img {
+  position: absolute;
+  right: 100px;
+  bottom: 0; */
+/* z-index: -1; */
+/* top: 0; */
+/* } */
+
+ul {
+  display: inline;
+  /* gap: 10px; */
+  /* list-style: none; */
+}
+/* img {
+  width: 300px;
+} */
+/* Position */
+/* Combinator */
+/* define relationship of 2 or more elements */
+/* 4 types of combinator */
+
+/* descendant combinator (space) */
+/* div p {
+  color: red;
+} */
+/* tr td {
+  border: 1px solid red;
+} */
+
+/* Child combinator (>) */
+
+/* div > p {
+  color: red;
+} */
+
+/* Next sibling combinator (+) */
+
+/* div {
+  border: 2px solid tomato;
+} */
+/* div + P {
+  color: red;
+} */
+
+/* sub sequent sibling combinator */
+
+/* div ~ p {
+  color: red;
+} */
+
+/* Psuedo class */
+/* style any element in special state */
+/* selector:psuedo-class-name{
+css properties
+}
+*/
+/* img:hover{
+width:500px ;
+}
+div:hover {
+  padding: 20px;
+  border: 1px solid black;
+  color: teal;
+  font-size: 20px;
+} */
+
+/* li:last-child,
+li:first-child {
+  color: red;
+}
+input:focus {
+  background-color: aqua;
+}
+
+input:disabled {
+  background-color: blueviolet;
+} */
+
+/* Pseudo element */
+/* it will style only for specific part of an element */
+/* selector::psuedo-element-name{
+css properties
+}
+*/
+/* p::after,
+p::before {
+  content: "😊";
+} */
+
+/* p::first-letter {
+text-transform: capitalize;
+color: red;
+font-size: 22px;
+} */
+
+/* p::selection{
+  background-color: yellow;
+  color: red;
+}
+input::placeholder{
+  color: red;
+} */
+
+::marker {
+  color: violet;
+}
+
+.box_container {
+  height: 100%;
+  width: 90vw;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(5, 270px);
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+}
+.box {
+  height: 250px;
+  /* width: 250px; */
+  border: 1px solid black;
+}
+
+/* Media query */
+
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+    font-size: 20px;
+  }
+  p {
+    color: blueviolet;
+  }
+  .box_container {
+    grid-template-columns: repeat(2, 320px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1080px) {
+  body {
+    background-color: rgb(152, 239, 166);
+    font-size: 22px;
+  }
+
+  input:focus {
+    background-color: turquoise;
+  }
+  .box_container {
+    grid-template-columns: repeat(3, 250px);
+  }
+}
