@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        /* min-width: 100px; */
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+      }
+
+      /* .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        background-color: #ccc;
+      }
+      .dropdown-content a:hover {
+        background-color: #fff;
+      } */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      Menu
+      <div class="dropdown-content">
+        <a href="./atm.html" target="_blank">Atm Card</a>
+        <a href="">Item 2</a>
+        <a href="">Item 3</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ATM Card — Flip (HTML & CSS only)</title>
+    <style>
+      :root {
+        --card-w: 340px;
+        --card-h: 210px;
+        --radius: 14px;
+        --bg: linear-gradient(135deg, #0f172a, #0b5f7d);
+        --accent: #ffd166;
+        --glass: rgba(255, 255, 255, 0.06);
+        --text: #e6eef6;
+      }
+
+      /* Layout / page */
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        gap: 1rem;
+        background: linear-gradient(180deg, #08121a 0%, #0a2b33 100%);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial;
+        color: var(--text);
+        padding: 2rem;
+      }
+
+      .wrap {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-direction: column;
+      }
+
+      /* flip control (hidden) */
+      #flip {
+        display: none;
+      }
+
+      /* Card scene */
+      .scene {
+        width: var(--card-w);
+        perspective: 1200px;
+      }
+
+      /* Card outer -> holds inner 3D */
+      .card {
+        width: 100%;
+        height: var(--card-h);
+        border-radius: var(--radius);
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 700ms cubic-bezier(0.2, 0.9, 0.3, 1);
+      }
+
+      /* When checkbox checked, rotate the card */
+      #flip:checked + .scene .card {
+        transform: rotateY(180deg);
+      }
+
+      /* faces */
+      .face {
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius);
+        backface-visibility: hidden;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 18px;
+      }
+
+      .front {
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .back {
+        background: linear-gradient(180deg, #1a1f2b, #0f1722);
+        transform: rotateY(180deg);
+        color: #111;
+        padding: 0;
+      }
+
+      /* decorative chip */
+      .chip {
+        width: 56px;
+        height: 40px;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #ffd166, #ffb347);
+        display: inline-block;
+        box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.25);
+      }
+
+      /* bank name area */
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .bank {
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.6px;
+      }
+
+      .contactless {
+        font-size: 12px;
+        opacity: 0.9;
+      }
+
+      /* card number / holder */
+      .number {
+        font-family: "Courier New", monospace;
+        font-size: 20px;
+        letter-spacing: 3px;
+        margin-top: 12px;
+      }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .name {
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 0.8px;
+      }
+
+      .expires {
+        text-align: right;
+        font-size: 12px;
+        opacity: 0.95;
+      }
+
+      /* back face elements */
+      .stripe {
+        height: 44px;
+        background: linear-gradient(90deg, #0b0b0b, #141414);
+        margin: 18px 0;
+      }
+
+      .sig-cvv {
+        display: flex;
+        gap: 12px;
+        padding: 12px 14px;
+        align-items: center;
+      }
+
+      .sig {
+        flex: 1;
+        background: linear-gradient(90deg, #fff, #f6f6f6);
+        height: 34px;
+        box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        padding: 0 8px;
+        font-size: 12px;
+        color: #222;
+      }
+
+      .cvv {
+        width: 72px;
+        background: #fff;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: #222;
+        border-radius: 4px;
+        box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.08);
+      }
+
+      .back-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 16px;
+        font-size: 12px;
+        color: #cbd5e1;
+      }
+
+      /* flip button (label for checkbox) */
+      .flip-btn {
+        user-select: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: linear-gradient(180deg, #ffffff12, #00000010);
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        cursor: pointer;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+
+      .flip-btn:active {
+        transform: translateY(1px) scale(0.998);
+      }
+      .flip-btn svg {
+        width: 18px;
+        height: 18px;
+        opacity: 0.95;
+      }
+
+      /* small helper layout */
+      .small {
+        font-size: 11px;
+        opacity: 0.9;
+      }
+
+      /* responsive: scale down on small screens */
+      @media (max-width: 380px) {
+        :root {
+          --card-w: 300px;
+          --card-h: 186px;
+        }
+      }
+
+      /* reduce motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        .card {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap" aria-live="polite">
+      <!-- hidden checkbox controls the flip -->
+      <input type="checkbox" id="flip"/>
+      <div class="scene" aria-hidden="false">
+        <div class="card" role="group" aria-labelledby="bankName">
+          <!-- FRONT -->
+          <div class="face front" aria-label="ATM card front">
+            <div class="top">
+              <div>
+                <div id="bankName" class="bank">NETIZENS BANK</div>
+                <div class="small">ATM / DEBIT • Platinum</div>
+              </div>
+              <div>
+                <span class="chip" title="EMV chip" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div>
+              <div class="number" aria-hidden="false">•••• 1234 5678 9012</div>
+              <div class="meta">
+                <div class="name">Umesh GARDAS</div>
+                <div class="expires">
+                  <div class="small">VALID<br /><strong>08/28</strong></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <div class="small">CUSTOMER SERVICE: +91 1800 123 456</div>
+              <div class="small contactless">contactless ⫶</div>
+            </div>
+          </div>
+
+          <!-- BACK -->
+          <div class="face back" aria-label="ATM card back">
+            <div class="stripe" role="presentation"></div>
+
+            <div class="sig-cvv">
+              <div class="sig">Authorized Signature</div>
+              <div class="cvv">CVV 842</div>
+            </div>
+
+            <div class="back-bottom">
+              <div>
+                <div style="font-weight: 700">NETIZENS BANK</div>
+                <div style="font-size: 11px; opacity: 0.9; max-width: 60%">
+                  If found, please return to the issuing bank. For inquiries
+                  call +91 1800 123 456.
+                </div>
+              </div>
+              <div style="text-align: right; font-size: 11px; color: #b6c3d6">
+                Member FDIC<br />Ⓜ︎
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The label is the flip button -->
+      <label
+        for="flip"
+        class="flip-btn"
+        role="button"
+        aria-pressed="false"
+        onclick="this.setAttribute('aria-pressed', document.getElementById('flip').checked ? 'false' : 'true')"
+      >
+        <!-- simple svg icon -->
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 7h10M20 17H10"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M14 3l4 4-4 4"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M10 21l-4-4 4-4"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        Flip Card
+      </label>
+    </div>
+
+    <!--
+    Note:
+    - This demo uses only HTML + CSS.
+    - The label toggles the hidden checkbox which flips the card.
+    - No JavaScript required. (Small onclick above only toggles aria-pressed attribute for accessibility; if you insist on zero JS remove the onclick.)
+  --></body>
+</html>

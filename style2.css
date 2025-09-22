@@ -1,0 +1,22 @@
+/* header{
+    color: red;
+    background-color: yellow;
+} */
+.headertop {
+  color: red;
+}
+#headerid {
+  color: magenta;
+}
+
+/* Box modal */
+
+/* content */
+/* padding */
+/* border */
+/* margin */
+div {
+  border: 1px solid red;
+  padding: 1rem;
+  margin: 2rem;
+}
