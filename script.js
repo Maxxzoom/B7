@@ -1,7 +1,16 @@
-// var a = 67;
-// let b = 45;
-// const c = true;
+// var a = 7;
 // console.log(a);
+
+// function demo() {
+//   var a = 45;
+//   console.log(a);
+// }
+
+// demo();
+// console.log(a);
+
+// const c = true;
+// demo();
 
 // function add() {
 //   console.log("addition");
@@ -12,8 +21,10 @@
 // var - global scope
 // we can reassign the value and redeclare the variable
 
-// var a = 34;
-// var a = 56;
+console.log(a);
+
+var a = 34;
+var a = 56;
 
 // function add() {
 //   var a = 67;
@@ -25,8 +36,10 @@
 // let
 // let is block scope
 // we cannot redeclare a variable but we can reassign the value
+// console.log(b);
 
 // let b = 99;
+// b = 477;
 // b=57847;
 
 // function add2() {
@@ -41,22 +54,26 @@
 // const
 // const is a block scope
 // we cannot reassign the value and we cannot redeclare the variable
-// const c = 88;
+// console.log(PI);
+
+const PI = 3.14;
+// PI = 3.15;
+console.log(PI);
+
+// add(4, 4);
+// add(7, 5);
 // c=48598;
-// function add3() {
-//   const c = 11;
-//   console.log(c);
-// }
-// add3();
+var e = 74;
+var b = 33;
+function sub() {
+  console.log(e - b);
+}
+sub()
 // console.log(c);
-
-
-
 
 // Data Types
 // - Primitive Data Type
 // Number,String,null,undefined,BigInt,True/False
-
 
 // Number =378.58;
 // String = "umesh";
@@ -65,20 +82,16 @@
 // BigInt=65789463567894504837;
 // Boolean=True/False
 
-
 // Non Primitive
 // -Object, Array [no limit]
 
-let student=[];
+let student = [];
 console.log(typeof student);
 
-
-if(isNaN(34)){
+if (isNaN(34)) {
   console.log("Is Number");
+} else {
+  console.log("");
 }
-else{
-  console.log("");  
-}
- 
-// Functions
 
+// Functions
