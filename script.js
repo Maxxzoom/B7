@@ -21,7 +21,7 @@
 // var - global scope
 // we can reassign the value and redeclare the variable
 
-console.log(a);
+// console.log(a);
 
 var a = 34;
 var a = 56;
@@ -58,17 +58,17 @@ var a = 56;
 
 const PI = 3.14;
 // PI = 3.15;
-console.log(PI);
+// console.log(PI);
 
 // add(4, 4);
 // add(7, 5);
 // c=48598;
-var e = 74;
-var b = 33;
-function sub() {
-  console.log(e - b);
-}
-sub()
+// var e = 74;
+// var b = 33;
+// function sub() {
+//   console.log(e - b);
+// }
+// sub();
 // console.log(c);
 
 // Data Types
@@ -85,13 +85,76 @@ sub()
 // Non Primitive
 // -Object, Array [no limit]
 
-let student = [];
-console.log(typeof student);
+// let student = [];
+// console.log(typeof student);
 
-if (isNaN(34)) {
-  console.log("Is Number");
-} else {
-  console.log("");
-}
+// if (isNaN(34)) {
+//   console.log("Is Number");
+// } else {
+//   console.log("");
+// }
 
 // Functions
+
+const mobilememory = "iphone";
+const mobilemodel = "128";
+
+// Object
+// is collection of properties
+const mobile = {
+  model: "iphone",
+  memory: 128,
+  ram: 8,
+  getmomoryandram: function () {
+    return (
+      "Memory is" +
+      " " +
+      this.memory +
+      "GB" +
+      " " +
+      "and RAM is" +
+      " " +
+      this.ram +
+      "GB"
+    );
+  },
+  getModelandram: function () {
+    return (
+      "Model is" + " " + this.model + " " + "and RAM is" + " " + this.ram + "GB"
+    );
+  },
+};
+
+// Get value
+// console.log(mobile.model);
+// console.log(mobile["model"]);
+
+console.log(mobile.getmomoryandram());
+console.log(mobile.getModelandram());
+
+// Update value inside the object
+console.log("before update" + mobile.ram);
+mobile.ram = "16";
+console.log("after update" + mobile.ram);
+
+// Add properties inside the object
+mobile.display = "gorila glass";
+console.log(mobile.display);
+
+// delete the propery
+delete mobile.ram;
+console.log(mobile.ram);
+
+// Array
+// is type of object 
+// there is no limit
+const array1 = ["umesh", 28, true, undefined, null, false, 329839283];
+
+const array2=[];
+array2[3]="maxx";
+
+console.log(array2);
+
+
+
+console.log(array1);
