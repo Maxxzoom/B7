@@ -23,8 +23,8 @@
 
 // console.log(a);
 
-var a = 34;
-var a = 56;
+// var a = 34;
+// var a = 56;
 
 // function add() {
 //   var a = 67;
@@ -101,60 +101,172 @@ const mobilemodel = "128";
 
 // Object
 // is collection of properties
+
+const mobile1 = {};
 const mobile = {
-  model: "iphone",
-  memory: 128,
-  ram: 8,
-  getmomoryandram: function () {
+  model: "Iphone",
+  memory: "128GB",
+  ram: "8GB",
+  battery: "7000mah",
+  wallpaper: {
+    nature1: "nature1",
+    nature2: "nature2",
+    nature3: "nature3",
+  },
+  getMemoryandRam: function () {
     return (
-      "Memory is" +
-      " " +
-      this.memory +
-      "GB" +
-      " " +
-      "and RAM is" +
-      " " +
-      this.ram +
-      "GB"
+      "Memory is" + " " + this.memory + " " + "and RAM is" + " " + this.ram
     );
   },
-  getModelandram: function () {
+  getbatteryandmodel: function () {
     return (
-      "Model is" + " " + this.model + " " + "and RAM is" + " " + this.ram + "GB"
+      "battery is" +
+      " " +
+      this.battery +
+      " " +
+      "and Model is" +
+      " " +
+      this.model
     );
   },
 };
+
+// to get value inside the object
+// console.log(mobile.model);
+// console.log(mobile.battery);
+// console.log(mobile.wallpaper.nature1);
+
+// console.log(mobile["model"]);
+// console.log(mobile.getMemoryandRam());
+// console.log(mobile.getbatteryandmodel());
+
+// To update value inside the object
+// console.log("before update " + mobile.memory);
+// mobile.memory = "256GB";
+
+// console.log("after update " + mobile.memory);
+
+// To add properties inside object
+// mobile.processor = "snapdragon";
+// console.log(mobile.processor);
+
+// console.log(mobile.ram);
+// delete mobile.ram;
+// console.log(mobile.ram);
+
+// Array
+// type of object
+// no a fixed length
+// it is always start from 0 index
+// const array2 = ["maxx", 2378, false, true, null, undefined, 7897673];
+
+// console.log(array2[2]);
+
+// console.log(typeof array2);
+
+// Method
+
+// const mobile = {
+//   model: "iphone",
+//   memory: 128,
+//   ram: 8,
+//   getmomoryandram: function () {
+//     return (
+//       "Memory is" +
+//       " " +
+//       this.memory +
+//       "GB" +
+//       " " +
+//       "and RAM is" +
+//       " " +
+//       this.ram +
+//       "GB"
+//     );
+//   },
+//   getModelandram: function () {
+//     return (
+//       "Model is" + " " + this.model + " " + "and RAM is" + " " + this.ram + "GB"
+//     );
+//   },
+// };
 
 // Get value
 // console.log(mobile.model);
 // console.log(mobile["model"]);
 
-console.log(mobile.getmomoryandram());
-console.log(mobile.getModelandram());
+// console.log(mobile.getmomoryandram());
+// console.log(mobile.getModelandram());
 
-// Update value inside the object
-console.log("before update" + mobile.ram);
-mobile.ram = "16";
-console.log("after update" + mobile.ram);
+// // Update value inside the object
+// console.log("before update" + mobile.ram);
+// mobile.ram = "16";
+// console.log("after update" + mobile.ram);
 
-// Add properties inside the object
-mobile.display = "gorila glass";
-console.log(mobile.display);
+// // Add properties inside the object
+// mobile.display = "gorila glass";
+// console.log(mobile.display);
 
-// delete the propery
-delete mobile.ram;
-console.log(mobile.ram);
+// // delete the propery
+// delete mobile.ram;
+// console.log(mobile.ram);
 
 // Array
-// is type of object 
+// is type of object
 // there is no limit
-const array1 = ["umesh", 28, true, undefined, null, false, 329839283];
 
-const array2=[];
-array2[3]="maxx";
+// const array2 = [];
+// array2[3] = "maxx";
 
-console.log(array2);
+// console.log(array2);
 
+// push() - it use to push data at last index
 
+// console.log(array1.push("maxx"));
+// console.log(array1);
 
-console.log(array1);
+// pop()- it use remove the data at last index
+// array1.pop();
+// console.log(array1);
+
+// shift() - it use to remove the data at first index
+// array1.shift();
+// console.log(array1);
+
+// unshift()- it use to add the data at first index
+// array1.unshift("",898)
+
+// console.log(array1);
+
+// join() - use to join the data in array
+// const joinarray = array1.join(" ");
+// console.log(joinarray);
+
+// const array1 = ["umesh", 28, true, undefined, null, false, 329839283];
+// console.log(array1.toString());
+// console.log(array1);
+// splice() - it will remove the data and delete the data from existing array and it will give new array
+// const arrsplice = array1.splice(3, 0, "item3 ", "item4");
+// console.log(arrsplice);
+// console.log(array1);
+
+// slice() - it will remove data in existing array from start index and until end index and it will give new array
+// const arrslice = array1.slice(1, 6);
+// console.log(arrslice);
+
+// Function
+// console.log(a);
+
+// var a = 4;
+// var b = 47;
+// add(56, 38);
+
+// function add(b, c, d, e, f, g, h) {
+//   return b + c + d + e + f + g + h;
+// }
+
+// console.log(add(false, 8, 5, "38", 6, 5, "maxx"));
+
+function sub(n, m, o, p) {
+  return n - m - o - p;
+}
+console.log(sub(5, 6, "7", 3));
