@@ -266,7 +266,76 @@ const mobile = {
 
 // console.log(add(false, 8, 5, "38", 6, 5, "maxx"));
 
-function sub(n, m, o, p) {
-  return n - m - o - p;
-}
-console.log(sub(5, 6, "7", 3));
+// function sub(n, m, o, p) {
+//   return n - m - o - p;
+// }
+// console.log(sub(5, 6, "7", 3));
+// 0                               9
+// const array1 = [34, 66, 86, 33, 3, 7, 12, 97, 22, 64];
+const array2 = ["umesh", 28, true, undefined, null, false, 329839283];
+
+// for (let i = 0; i < array1.length; i++) {
+//   console.log(array1[i]);
+// }
+
+// forEach() - it wont return new array
+// array1.forEach((data) => {
+//   console.log(data);
+// });
+
+// map() - it will return new array
+// const maparr = array1.map((n) => {
+//   return n + 2;
+// });
+// console.log(array1);
+// console.log(maparr);
+
+// filter() -
+
+// const filterarr = array1.filter((number) => {
+//   return number > 30;
+// });
+
+// console.log(filterarr);
+
+// Array of objects
+// const students = [
+//   { id: 1, name: "yash", game: "cricket" },
+//   { id: 2, name: "sakshi", game: "basketball" },
+//   { id: 3, name: "priyanka", game: "basketball" },
+//   { id: 4, name: "sudhanshu", game: "cricket" },
+//   { id: 5, name: "arjun", game: "cricket" },
+// ];
+
+// const gameplayer = students.filter((student) => {
+//   return student.game === "cricket";
+// });
+// console.log(gameplayer);
+
+const array1 = [34, 66, 86, 33, 3, 7, 33, 12, 97, 22, 33, 64];
+
+// find() -
+// const is33 = array1.find((number) => {
+//   return number === 33;
+// });
+// console.log(is33);
+
+// indexOf() -
+const isfirstindex = array1.indexOf(33);
+console.log(isfirstindex);
+
+// lastindexOf() -
+
+const lastindexof = array1.lastIndexOf(33);
+console.log(lastindexof);
+
+// reduce() -
+const reducearr = array1.reduce((sum, number) => {
+  // sum = sum+number;
+  // sum = 5+34; = 39;
+  // sum = 39 +66 = 105;
+  // sum = 105 + 86 =
+
+  return sum + number;
+}, 5);
+console.log(reducearr);
