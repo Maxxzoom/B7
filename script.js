@@ -292,7 +292,7 @@ const array2 = ["umesh", 28, true, undefined, null, false, 329839283];
 
 // filter() -
 
-// const filterarr = array1.filter((number) => {
+// const filterarr = array1.filter((number,index) => {
 //   return number > 30;
 // });
 
@@ -320,22 +320,147 @@ const array1 = [34, 66, 86, 33, 3, 7, 33, 12, 97, 22, 33, 64];
 // });
 // console.log(is33);
 
-// indexOf() -
-const isfirstindex = array1.indexOf(33);
-console.log(isfirstindex);
+// // indexOf() -
+// const isfirstindex = array1.indexOf(33);
+// console.log(isfirstindex);
 
 // lastindexOf() -
 
-const lastindexof = array1.lastIndexOf(33);
-console.log(lastindexof);
+// const lastindexof = array1.lastIndexOf(33);
+// console.log(lastindexof);
 
 // reduce() -
-const reducearr = array1.reduce((sum, number) => {
-  // sum = sum+number;
-  // sum = 5+34; = 39;
-  // sum = 39 +66 = 105;
-  // sum = 105 + 86 =
+// const reducearr = array1.reduce((sum, number) => {
+// sum = sum+number;
+// sum = 5+34; = 39;
+// sum = 39 +66 = 105;
+// sum = 105 + 86 =
 
-  return sum + number;
-}, 5);
-console.log(reducearr);
+//   return sum + number;
+// }, 5);
+// console.log(reducearr);
+
+// pass by value
+// let a = 5;
+// let b = a;
+// console.log(a, b);
+
+// let c = b;
+// console.log(a, b, c);
+// c = 9;
+// console.log(a, b, c);
+
+// pass by reference
+// let obj1 = { name: "yash" };
+// let obj2 = obj1;
+// console.log(obj1.name, obj2.name);
+
+// let obj3 = obj2;
+// console.log(obj1.name, obj2.name, obj3.name);
+// obj2.name = "priyanka";
+// console.log(obj1.name, obj2.name, obj3.name);
+
+// const student1 = { id: 1, name: "yash", game: "cricket" };
+
+// // for in - object
+
+// for (let prop in student1) {
+//   console.log(prop);
+//   console.log(student1[prop]);
+// }
+
+// // for of - array
+// for (let number of array1) {
+//   console.log(number);
+// }
+
+//
+
+const fruits = [
+  "apple",
+  "banana",
+  "orange",
+  "mango",
+  "apple",
+  "banana",
+  "apple",
+];
+
+// const reducfruits = fruits.reduce((acc, fruit,index) => {
+//   acc[fruit] = (acc[fruit] || 0) + 1;
+// acc["apple"]= 1;
+// acc["banana"]= 1;
+// acc["orange"]= 1;
+// acc["mango"]= 1;
+// acc["apple"]= 2;
+// acc["banana"]= 2;
+// acc["apple"]= 3;
+// return acc;
+// }, {});
+// console.log(reducfruits);
+
+const student1 = {
+  id: 1,
+  firstname: "Priyanka",
+  lastname: "sahu",
+  age: 24,
+  getFullname: function () {
+    return this.firstname + " " + this.lastname;
+  },
+  getGreetMsg: function (msg) {
+    return "Hey" + " " + this.firstname + " " + msg;
+  },
+};
+const student2 = {
+  id: 1,
+  firstname: "Yash",
+  lastname: "Gajbhiye",
+  age: 24,
+};
+const student3 = {
+  id: 1,
+  firstname: "sakshi",
+  lastname: "gadekar",
+  age: 24,
+};
+
+console.log(student1.getFullname());
+console.log(student1.getGreetMsg("How are you"));
+
+// call()
+// console.log(student1.getFullname.call(student2));
+// console.log(student1.getGreetMsg.call(student2, "what you doing"));
+
+// console.log(student1.getFullname.call(student3));
+// console.log(student1.getGreetMsg.call(student3, "Had you lunch"));
+
+// apply()
+// console.log(student1.getFullname.apply(student2));
+// console.log(student1.getGreetMsg.apply(student2, ["what you doing"]));
+
+// console.log(student1.getFullname.apply(student3));
+// console.log(student1.getGreetMsg.apply(student3, ["Had you lunch"]));
+
+// bind()
+const yashdata = student1.getFullname.bind(student2);
+const yashdata1 = student1.getGreetMsg.bind(student2, "How are you");
+
+console.log(yashdata());
+console.log(yashdata1());
+
+// Normal function
+function myfun() {}
+myfun();
+
+// Arrow function
+const myfun2 = () => {};
+
+myfun2();
+
+
+// IIFE
+// Immediate involke function execution
+
+(function () {
+  console.log("Hello");
+})();
