@@ -330,14 +330,14 @@ const array1 = [34, 66, 86, 33, 3, 7, 33, 12, 97, 22, 33, 64];
 // console.log(lastindexof);
 
 // reduce() -
-// const reducearr = array1.reduce((sum, number) => {
-// sum = sum+number;
-// sum = 5+34; = 39;
-// sum = 39 +66 = 105;
-// sum = 105 + 86 =
+// const reducearr = array1.reduce((acc, number) => {
+//   acc = acc + number;
+//   // sum = 0+34; = 34;
+//   // 34 = 34 +66 = 100;
+//   // 100 = 100 + 86 =
 
-//   return sum + number;
-// }, 5);
+//   return acc;
+// }, 0);
 // console.log(reducearr);
 
 // pass by value
@@ -386,17 +386,18 @@ const fruits = [
   "apple",
 ];
 
-// const reducfruits = fruits.reduce((acc, fruit,index) => {
-//   acc[fruit] = (acc[fruit] || 0) + 1;
-// acc["apple"]= 1;
-// acc["banana"]= 1;
-// acc["orange"]= 1;
-// acc["mango"]= 1;
-// acc["apple"]= 2;
-// acc["banana"]= 2;
-// acc["apple"]= 3;
-// return acc;
-// }, {});
+const reducfruits = fruits.reduce((acc, fruit, index) => {
+  acc[fruit] = (acc[fruit] || 0) + 1;
+
+  // 1. acc["apple"]= (0 || 0)+1;  {apple:1 }
+  // 2. acc["banana"]= 0+1;  \\1 {apple:1, banana:1}
+  // 3. acc["orange"]= 0+1;  {apple:1, banana:1,orange:1}
+  // 4. acc["mango"]= 0+1; {apple:1, banana:1,orange:1}
+  // 5. acc["apple"]= (1 || 0 ) +1
+  // 6. acc["banana"]= (1 || 0 ) +1
+
+  return acc;
+}, {});
 // console.log(reducfruits);
 
 const student1 = {
@@ -407,8 +408,8 @@ const student1 = {
   getFullname: function () {
     return this.firstname + " " + this.lastname;
   },
-  getGreetMsg: function (msg) {
-    return "Hey" + " " + this.firstname + " " + msg;
+  getGreetMsg: function (msg, warning) {
+    return "Hey" + " " + this.firstname + " " + msg + warning;
   },
 };
 const student2 = {
@@ -424,12 +425,12 @@ const student3 = {
   age: 24,
 };
 
-console.log(student1.getFullname());
-console.log(student1.getGreetMsg("How are you"));
+// console.log(student1.getFullname());
+// console.log(student1.getGreetMsg("How are you",1));
 
-// call()
+// // call()
 // console.log(student1.getFullname.call(student2));
-// console.log(student1.getGreetMsg.call(student2, "what you doing"));
+// console.log(student1.getGreetMsg.call(student2, "what you doing","have you lunch"));
 
 // console.log(student1.getFullname.call(student3));
 // console.log(student1.getGreetMsg.call(student3, "Had you lunch"));
@@ -442,11 +443,13 @@ console.log(student1.getGreetMsg("How are you"));
 // console.log(student1.getGreetMsg.apply(student3, ["Had you lunch"]));
 
 // bind()
-const yashdata = student1.getFullname.bind(student2);
-const yashdata1 = student1.getGreetMsg.bind(student2, "How are you");
+// console.log(student1.getFullname.bind(student2));
 
-console.log(yashdata());
-console.log(yashdata1());
+// const yashdata = student1.getFullname.bind(student2);
+// const yashdata1 = student1.getGreetMsg.bind(student2, ["How are you"]);
+
+// console.log(yashdata());
+// console.log(yashdata1());
 
 // Normal function
 function myfun() {}
@@ -457,10 +460,57 @@ const myfun2 = () => {};
 
 myfun2();
 
-
 // IIFE
 // Immediate involke function execution
 
 (function () {
   console.log("Hello");
 })();
+
+// let arrays = [
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ];
+
+// const mergedArray = arrays.reduce((acc, arr) => {
+//   return acc.concat(arr);
+// }, []);
+
+// // [].concat([1,2])
+
+// [1, 2].concat([3, 4])[(1, 2, 3, 4)].concat([5, 6]);
+// [1, 2, 3, 4, 5, 6];
+
+// console.log(arrays);
+// console.log("New Merged Array: ", mergedArray);
+let totalarr = [23, 86, 45, 87, 55];
+
+const totalvalue = totalarr.reduce((sum, number) => {
+  return sum + number;
+}, 0);
+
+const average = totalvalue / totalarr.length;
+console.log(average);
+
+// BOM
+// Broswer Object Modal
+// alert("Hellow");
+// confirm("Enter your age");
+// let age = prompt("enter your age");
+// if (age < 12) {
+//  console.log("school details");
+ 
+// }
+// if (age > 18) {
+//   alert("is adult");
+// }
+
+
+// DOM
+// Document Object Modal
+// methods - getElementById(),getElementByclassName(),getElementByTagname()
+// Evnet- onclick,mousehover,mousedown,mouseout,onload, ondragover,
+// properties - document.getElementById("mytext").innerText,
+// document.getElementById("mytext").innerHTML,
+// document.getElementById("mytext").className(),

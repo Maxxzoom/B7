@@ -118,10 +118,27 @@
     <span>Span</span>
     <b>bold</b>
     <i>itelic</i> -->
-    <div>Lorem ipsum dolor sit amet consectetur.</div>
+    <!-- <div>Lorem ipsum dolor sit amet consectetur.</div> -->
     <!-- <img src="./images/d8gygl.jpg" alt="" /> -->
-
+    <!-- <p id="demo"></p> -->
     <script>
+      // let para = (document.getElementById("demo").innerHTML = "How are you");
+      // if (para === "How are you") {
+      //   document.getElementById("demo").style.background = "yellow";
+      // } else {
+      //   document.getElementById("demo").style.background = "red";
+      // }
+      for (i = 0; i < 20; i++) {
+        let p = document.createElement("p");
+        p.innerHTML = `${i + 1}`;
+        if (i % 2 == 0) {
+          p.style.color = "black";
+        } else {
+          p.style.color = "yellow";
+        }
+        document.body.appendChild(p);
+      }
+
       // what we can do using js
 
       // Manupulating HTML elements using js

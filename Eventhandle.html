@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mouse Event</h1>
+    <button id="btn1" class="demo1">Click1</button>
+    <button id="btn2">Click2</button>
+    <button id="btn3">Click3</button>
+
+    <script>
+      // <!-- Event Handlers -->
+
+      // <!-- Mouse Event -->
+      //   click
+      // doubleclick
+      // hover
+      const btn1 = document.getElementById("btn1");
+      const btn2 = document.getElementById("btn2");
+      const btn3 = document.getElementById("btn3");
+
+      
+      btn1.addEventListener("click", () => {
+        btn1.style.background = "tomato";
+        btn1.style.color = "white";
+      });
+      btn1.addEventListener("dblclick", () => {
+        btn1.style.background = "";
+        btn1.style.color = "";
+      });
+      btn3.addEventListener("mouseover", () => {
+        btn3.style.background = "tomato";
+        btn3.style.color = "white";
+      });
+      btn3.addEventListener("mouseout", () => {
+        btn3.style.background = "";
+        btn3.style.color = "";
+      });
+
+      console.log(btn1);
+    </script>
+  </body>
+</html>
