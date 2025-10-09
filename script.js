@@ -507,10 +507,6 @@ console.log(average);
 // }
 
 
-// DOM
-// Document Object Modal
-// methods - getElementById(),getElementByclassName(),getElementByTagname()
-// Evnet- onclick,mousehover,mousedown,mouseout,onload, ondragover,
-// properties - document.getElementById("mytext").innerText,
-// document.getElementById("mytext").innerHTML,
-// document.getElementById("mytext").className(),
+
+
+

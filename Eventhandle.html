@@ -6,41 +6,70 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Mouse Event</h1>
-    <button id="btn1" class="demo1">Click1</button>
-    <button id="btn2">Click2</button>
-    <button id="btn3">Click3</button>
+    <!--Mouse Event  -->
+    <button id="click">click</button>
+    <p id="para1"></p>
+    <!-- <button id="dblclick">double click</button>
+    <button id="hover">hover</button> -->
 
+    <!-- Keyboard Event -->
+    <!-- <input type="text" id="input1" />
+    <input type="text" id="input2" /> -->
+
+    <!-- Form events -->
+    <form id="form">
+      <input type="text" id="input1" required /><br />
+      <input type="text" id="input2" required/> <br />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="formmessage"></p>
     <script>
-      // <!-- Event Handlers -->
+      // DOM
+      // Document Object Modal
+      // methods - getElementById(),getElementByclassName(),getElementByTagname()
+      // Evnet- onclick,mousehover,mousedown,mouseout,onload, ondragover,
+      // properties - document.getElementById("mytext").innerText,
+      // document.getElementById("mytext").innerHTML,
+      // document.getElementById("mytext").className(),
 
-      // <!-- Mouse Event -->
-      //   click
-      // doubleclick
-      // hover
-      const btn1 = document.getElementById("btn1");
-      const btn2 = document.getElementById("btn2");
-      const btn3 = document.getElementById("btn3");
+      // addeventlistener(type,callback)
 
-      
-      btn1.addEventListener("click", () => {
-        btn1.style.background = "tomato";
-        btn1.style.color = "white";
-      });
-      btn1.addEventListener("dblclick", () => {
-        btn1.style.background = "";
-        btn1.style.color = "";
-      });
-      btn3.addEventListener("mouseover", () => {
-        btn3.style.background = "tomato";
-        btn3.style.color = "white";
-      });
-      btn3.addEventListener("mouseout", () => {
-        btn3.style.background = "";
-        btn3.style.color = "";
-      });
+      // Mouse Events
+      // document.getElementById("click").addEventListener("mouseleave", () => {
+      //   document.getElementById("para1").innerHTML = "";
+      // });
+      // document.getElementById("click").addEventListener("mousemove", () => {
+      //   document.getElementById("para1").innerHTML = "Mouse is moving";
+      // });
 
-      console.log(btn1);
+      // Keyboard events
+      // const inp1 = document.getElementById("input1");
+      // const inp2 = document.getElementById("input2");
+      // inp1.addEventListener("keypress", () => {
+      //   inp1.style.background = "tomato";
+      //   inp1.style.color = "green";
+      // });
+
+      // inp1.addEventListener("keydown", () => {
+      //   inp1.style.background = "black";
+      //   inp1.style.color = "white";
+      // });
+      // inp1.addEventListener("keyup", () => {
+      //   inp1.style.background = "yellow";
+      //   inp1.style.color = "red";
+      //   inp1.style.fontSize = "22px";
+      // });
+
+      // Form events
+      const form = document.getElementById("form");
+      const formmessage = document.getElementById("formmessage");
+
+      form.addEventListener("submit", (e) => {
+        console.log(e);
+
+        e.preventDefault();
+        formmessage.innerHTML = "Form successfully submitted";
+      });
     </script>
   </body>
 </html>
