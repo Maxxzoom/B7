@@ -274,7 +274,7 @@
     <input type="text" id="paste" placeholder="pasterhere" />
     <p id="copy">Lorem ipsum dolor sit.</p> -->
 
-    <p id="time"></p>
+    <!-- <p id="time"></p>
     <script>
       // DOM
       // Document Object Modal
@@ -357,8 +357,12 @@
       // });
 
       // Drag and drop
-    </script>
+    </script> -->
 
+    <p>Promise</p>
+    <button id="getdata">load task</button>
+    <!-- <p id="result"></p> -->
+    <ul id="result"></ul>
     <script>
       // drag and drop events
       // const drag = document.getElementById("drag");
@@ -387,14 +391,55 @@
       // setTimeInterval - this will execuate a code after a perticular time period(loop)
 
       // setTimeout(() => {
-      //   prompt("enter your age");
+      //   alert("Hi");
+      //   const a = "umesh";
+      //   console.log(a);
       // }, 3000);
 
-      const time = document.getElementById("time");
-      let count = 0;
-      setInterval(() => {
-        time.innerHTML = ++count;
-      }, 1000);
+      // const time = document.getElementById("time");
+      // let count = 0;
+      // setInterval(() => {
+      //   time.innerHTML = count++;
+      // }, 1000);
+
+      // Promise  - is an object it has 2 parameter(resolve,reject)
+
+      // const taskbutton = document.getElementById("taskbutton");
+      // const result = document.getElementById("result");
+      // taskbutton.addEventListener("click", () => {
+      //   let number = Math.random() > 0.5;
+      // const process = new Promise(resolve, reject);
+      //   setTimeout(() => {
+      //     if (number) {
+      //       console.log("success");
+      //     } else {
+      //       console.log("reject");
+      //     }
+      //   }, 2000);
+      // });
+
+      // Async function
+
+      const data = document.getElementById("getdata");
+      const result = document.getElementById("result");
+
+      async function fetUser() {
+        const res = await fetch("https://jsonplaceholder.typicode.com/users");
+        const response = await res.json();
+        // result.innerHTML = `
+        // Name:${response.name} ,
+        // Email ${response.email}
+        // `;
+        console.log(response);
+        response.forEach((element) => {
+          const li = document.createElement("li");
+          li.classList.add("list");
+          li.innerHTML = `City: ${element.address.city} - Email: ${element.email} `;
+          result.appendChild(li);
+        });
+      }
+
+      data.addEventListener("click", fetUser);
     </script>
   </body>
 </html>
