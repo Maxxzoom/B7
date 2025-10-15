@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      p {
+        border: 2px solid #1dd6df;
+        padding: 20px 30px;
+        border-radius: 10px;
+        font-size: 24px;
+        color: #1dd6df;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h2>Digital Clock</h2> -->
+
+    <p id="time">00:00:00</p>
+
+    <script>
+      const time = document.getElementById("time");
+
+      function updateClock() {
+        const now = new Date();
+
+        let hrs = now.getHours();
+        let mins = now.getMinutes();
+        let secs = now.getSeconds();
+
+        // console.log(hrs < 10 ? "0" + hrs : hrs);
+        let format;
+        if (hrs >= 12) {
+          format = "PM";
+        } else {
+          format = "AM";
+        }
+        hrs = hrs < 10 ? "0" + hrs : hrs;
+        mins = mins < 10 ? "0" + mins : mins;
+        secs = secs < 10 ? "0" + secs : secs;
+
+        document.getElementById(
+          "time"
+        ).textContent = `${hrs}:${mins}:${secs} ${format}`;
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+    </script>
+  </body>
+</html>
