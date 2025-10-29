@@ -86,6 +86,10 @@
 
         localStorage.setItem("tasks", JSON.stringify(tasks));
       }
+      console.log("Start");
+      setTimeout(() => console.log("Inside Timeout"), 0);
+      console.log("End");
+      // Output: Start → End → Inside Timeout
     </script>
   </body>
 </html>
