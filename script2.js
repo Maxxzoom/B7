@@ -3,7 +3,7 @@
 //   c = 7;
 
 // console.log(a);
-var a = 20;
+// var a = 20;
 // // Async
 // setTimeout(() => {
 //   console.log("setTimout");
@@ -47,8 +47,8 @@ var a = 20;
 // Non primitive
 // Array, Objects
 
-let arr = [];
-let std1 = {};
+// let arr = [];
+// let std1 = {};
 
 //normal func
 // function add(f, s) {
@@ -68,21 +68,43 @@ let std1 = {};
 // console.log(add(3, 5));
 // console.log(add2(6, 8));
 
-let arr2 = [3, "priyanka", "sudanshu", "umesh", true];
+// for
 
-// 5 < 5;
-// for (let i = 5; i < arr2.length; i++) {
-//   console.log(i);
-
+// let arr = [1];
+// for (i = 0; i <= 5; i++) {
+//   console.log(arr[i]);
+//   // 0,
 // }
 
-j = 0;
-while (j < arr2.length) {
-  console.log(arr2[j]);
-  j++;
-}
+// let sum = 0;
+// for (i = 0; i > 5; i--) {
+//   sum = sum + i;
+//   console.log(sum);
+//   // sum=0+0 = 0
+//   // sum=0+1 = 1
+//   // sum=1+2 = 3
+//   // sum=3+3 = 6
+//   // sum=5+4 = 10
+//   // sum=9+5 = 15
+// }
 
-// Array
-for (let a of arr2) {
-  console.log(a);
+// while
+
+// let j = 0;
+// while (j <= 5) {
+//   console.log(j);
+//   j++;
+//   // 1,2,3,4,5,6
+// }
+
+// do while 
+
+
+let k = 0;
+do {
+  // 0,1,2,3,4,5
+  k++;
+  console.log(k);
+  // 1,2,3,4,5,6
 }
+while (k <= 5)
