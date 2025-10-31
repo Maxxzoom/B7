@@ -97,14 +97,144 @@
 //   // 1,2,3,4,5,6
 // }
 
-// do while 
+// do while
 
+// let k = 0;
+// do {
+//   // 0,1,2,3,4,5
+//   k++;
+//   console.log(k);
+//   // 1,2,3,4,5,6
+// } while (k <= 5);
 
-let k = 0;
-do {
-  // 0,1,2,3,4,5
-  k++;
-  console.log(k);
-  // 1,2,3,4,5,6
+// let day = 6;
+
+// switch (day) {
+//   case 1:
+//     console.log("Monday");
+//     break;
+//   case 2:
+//     console.log("Tuesday");
+//     break;
+//   case 3:
+//     console.log("Wednesday");
+//     break;
+//   default:
+//     console.log("another day");
+// }
+
+// // Function scope(local)
+// function myfun() {
+//   var first="umesh"
+// }
+
+// myfun()
+// console.log(first);
+
+// // Block scope {}
+
+// // var is function scope, not block scoped
+// for(let i=0;i<5;i++){
+//   var firstN="umesh"
+// }
+// console.log(firstN);
+
+// Hoisting
+
+// console.log(a);
+
+// var a = 30;
+
+// function add() {
+//   console.log("add");
+//   console.log("add");
+//   console.log("add");
+//   console.log("add");
+//   console.log("add");
+//   console.log("add");
+//   let a = 3;
+//   let b = 3;
+//   return a + b;
+// }
+// function add2() {}
+
+// if (true) {
+//   console.log(a + b);
+//   console.log("add");
+//   console.log("add");
+//   console.log("add");
+//   var a = 3;
+//   var b = 3;
+//   // return a + b;
+// }
+// let b = 30;
+
+// function add3(a, b) {
+//   a + b;
+// }
+
+const add4 = (a, b) => a + b;
+
+// IIFE(Immediate involke function execution)
+
+// console.log(add3(4, 6));
+// console.log(add4(4, 6));
+
+// (function () {
+//   console.log("test");
+// })();
+
+// Promise - is a object it has 2 parameter (resolve,reject)
+
+// console.log("a");
+
+// Promise.resolve().then(() => {
+//   console.log("Promise resolved");
+// });
+
+// setTimeout(() => {
+//   console.log("setTimeOut");
+// }, 0);
+// console.log("b");
+
+// function getname(firstname) {
+//   return firstname;
+// }
+
+// console.log(getname("yash"));
+// console.log(getname("priyanka"));
+
+// console.log(3 + undefined + false + true + "4" + false + true + 4);
+
+// async function getdata() {
+//   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const res = await response.json();
+//   console.log(res);
+// }
+// getdata();
+
+// const arr = [];
+
+// arr.map(() => {});
+
+function map(total) {
+  let discount = 0.1;
+  let actualvalue = total - total * discount;
+  callback(actualvalue);
 }
-while (k <= 5)
+
+function callback(actual) {
+  console.log(actual);
+}
+
+console.log(map(100));
+
+// function
+// async function
+// fetch
+// switch
+// promise
+// hoisting
+// IIFC
+// function scope(local)
+// block scope
