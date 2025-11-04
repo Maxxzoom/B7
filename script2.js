@@ -217,17 +217,17 @@ const add4 = (a, b) => a + b;
 
 // arr.map(() => {});
 
-function map(total) {
-  let discount = 0.1;
-  let actualvalue = total - total * discount;
-  callback(actualvalue);
-}
+// function map(total) {
+//   let discount = 0.1;
+//   let actualvalue = total - total * discount;
+//   callback(actualvalue);
+// }
 
-function callback(actual) {
-  console.log(actual);
-}
+// function callback(actual) {
+//   console.log(actual);
+// }
 
-console.log(map(100));
+// console.log(map(100));
 
 // function
 // async function
@@ -238,3 +238,54 @@ console.log(map(100));
 // IIFC
 // function scope(local)
 // block scope
+
+// Callback -
+
+// function getName(name, getFulldetails) {
+//   console.log(name);
+//   getFulldetails(name);
+// }
+
+// function getFulldetails(firstname) {
+//   console.log(firstname, 23);
+// }
+
+// getName("sakshi", getFulldetails);
+
+// setTimeout(() => {
+//   setTimeout(() => {
+//     setTimeout(() => {
+//       console.log("set 3");
+//     }, 1000);
+//     console.log("set 2");
+//   }, 500);
+//   console.log("set 1");
+// }, 100);
+
+// function getName(name, callback) {
+//   console.log(name);
+//   setTimeout(() => {
+//     // console.log(callback(name));
+//   }, 1000);
+// }
+
+// function getFulldetails(firstname) {
+//   console.log(firstname, 23);
+// }
+
+// getName("sakshi", getFulldetails);
+
+const numbers = [5, 25, 33, 40, 52];
+
+// map()
+// const mapparr = numbers.map((value, index) => value < 30);
+
+// console.log(numbers);
+// console.log(mapparr);
+
+// filter()
+//  value>26 ? true :false
+const filterarr = numbers.filter((value) => value > 26 );
+console.log(filterarr);
+// 7,27,33,40,52
+
