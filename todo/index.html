@@ -4,92 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      body {
-        text-align: center;
-        margin-top: 60px;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      input {
-        padding: 10px;
-        border: 1px solid gray;
-        border-radius: 5px;
-      }
-      button {
-        padding: 10px;
-        border: none;
-        background-color: rgb(68, 163, 240);
-        color: white;
-        border-radius: 5px;
-      }
-      li.done {
-        text-decoration: line-through;
-      }
-    </style>
+    <link rel="stylesheet" href="./todo.css" />
   </head>
   <body>
-    <h1>Todo list</h1>
-
-    <input type="text" id="task" />
-    <button id="addbtn" onclick="addTask()">Add</button>
-
-    <ul id="list"></ul>
-
-    <script>
-      const list = document.getElementById("list");
-
-      window.onload = function () {
-        const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-        savedTasks.forEach((task) => addToDom(task.text));
-      };
-
-      function addTask() {
-        const inputText = document.getElementById("task");
-
-        const trimtext = inputText.value.trim();
-        if (trimtext === "") return;
-
-        addToDom(trimtext);
-        saveTasktoLocalstorage();
-        inputText.value = "";
-      }
-
-      function addToDom(text) {
-        const li = document.createElement("li");
-        li.innerText = text;
-
-        // Toggle
-        li.addEventListener("click", () => {
-          li.classList.toggle("done");
-          saveTasktoLocalstorage();
-        });
-
-        // Delete
-        const deletebtn = document.createElement("button");
-        deletebtn.innerHTML = "Delete";
-        deletebtn.classList.add("delete-btn");
-        deletebtn.addEventListener("click", () => {
-          li.remove();
-          saveTasktoLocalstorage();
-        });
-        li.appendChild(deletebtn);
-        list.appendChild(li);
-      }
-
-      function saveTasktoLocalstorage(task, done) {
-        const tasks = [];
-        document.querySelectorAll("#list li").forEach((li) => {
-          const text = li.firstChild.textContent;
-          tasks.push({ text, done: li.classList.contains("done") });
-          console.log(text);
-        });
-
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-      }
-      console.log("Start");
-      setTimeout(() => console.log("Inside Timeout"), 0);
-      console.log("End");
-      // Output: Start → End → Inside Timeout
-    </script>
+    <div class="contianer">
+      <h2>To-Do List</h2>
+      <div class="input-area">
+        <input type="text" placeholder="Enter a task" id="taskInput" />
+        <button onclick="addTask()">Add</button>
+      </div>
+      <ul id="taskList"></ul>
+    </div>
   </body>
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      const taskText = taskInput.value.trim();
+
+      if (taskText === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.innerHTML = `
+      ${taskText} <button class="remove-btn" onclick="removeTask(this)" >X</button>
+      `;
+      document.getElementById("taskList").appendChild(li);
+      taskInput.value = "";
+    }
+
+    function removeTask(button) {
+      const li = button.parentElement;
+      li.remove();
+    }
+  </script>
 </html>

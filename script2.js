@@ -275,7 +275,7 @@ const add4 = (a, b) => a + b;
 
 // getName("sakshi", getFulldetails);
 
-const numbers = [5, 25, 33, 40, 52];
+// const numbers = [5, 25, 33, 40, 52];
 
 // map()
 // const mapparr = numbers.map((value, index) => value < 30);
@@ -285,7 +285,165 @@ const numbers = [5, 25, 33, 40, 52];
 
 // filter()
 //  value>26 ? true :false
-const filterarr = numbers.filter((value) => value > 26 );
-console.log(filterarr);
+// const filterarr = numbers.filter((value) => value > 26 );
+// console.log(filterarr);
 // 7,27,33,40,52
+
+// reduce()
+
+// const numbers = [10, 20, 30, 40, 50];
+// const total = numbers.reduce((acc, value) => acc + value, 0);
+// console.log(total);
+
+// Maximum number
+// const scores = [39, 58, 27, 94, 63];
+
+// const maxnum = scores.reduce((acc, val) => (val < acc ? val : acc));
+
+// console.log(maxnum);
+
+//  val > acc ? true : false
+// 39 > 0 ? 39 : 0
+// 58 > 39 ? 58 : 39
+// 27 > 58 ? 27 : 58
+// 94 > 58 ? 94 : 58
+// 63> 94 ? 63 : 94
+// acc = 94
+
+// const arr = [
+//   [2, 3],
+//   [4, 5],
+//   [6, 7],
+// ];
+
+// const addedarr = arr.reduce((acc, value) => acc.concat(value), []);
+
+// console.log(arr);
+// console.log(addedarr);
+
+//
+
+// const fruits = ["banana", "mango", "apple", "apple", "banana", "apple"];
+
+// const fruitscount = fruits.reduce((acc, fruit) => {
+//   acc[fruit] = (acc[fruit] || 0) + 1;
+//   return acc;
+// acc[apple]= 1
+// "apple"= 1
+// "mango"=1
+// "apple"=1+1 =2;
+// "banana"= 1;
+// "mango"=1+1=2;
+// "apple"= 2+1=3
+// {apple: 3, mango:2,banan:1}
+// }, {});
+
+// console.log(fruitscount);
+
+// const people = [
+//   { name: "sakshi", age: 23 },
+//   { name: "yash", age: 24 },
+//   { name: "priyanka", age: 23 },
+//   { name: "sudhanshu", age: 24 },
+//   { name: "arjun", age: 25 },
+//   { name: "swapnil", age: 23 },
+// ];
+
+// const grouped = people.reduce((acc, person) => {
+//   const age = person.age;
+//   if (!acc[age]) acc[age] = [];
+//   acc[age].push(person);
+//   return acc;
+// }, {});
+// console.log(grouped);
+
+// 23=[{ name: "sakshi", age: 23 },{ name: "priyanka", age: 23 },{ name: "swapnil", age: 23 }]
+// 24 = [{ name: "yash", age: 24 },{ name: "sudhanshu", age: 24 },{ name: "arjun", age: 24 }]
+
+// Promise -
+
+// const promise = new Promise((resolve, reject) => {
+//   const success = false;
+//   if (success) resolve("task success");
+//   else reject("task failed");
+// });
+
+// promise.then((result) => console.log(result)).catch((err) => console.log(err));
+
+// function fetchData() {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve("data fetched"), 4000);
+//   });
+// }
+
+// fetchData().then((data) => console.log(data));
+
+// new Promise((resolve) => resolve(2))
+//   .then((num) => num * 2)
+//   .then((number) => number * 4)
+//   .then((result) => console.log(result));
+
+// DOM (basic)
+
+// Select by ID
+// const title = document.getElementById("main-title");
+// const title2 = document.getElementById("main-title2");
+// const title3 = document.getElementById("main-title3");
+
+// Select by class
+// const items = document.getElementsByClassName("list-item");
+
+// Modern querySelector
+// const button = document.querySelector(".btn");
+
+// Selecting by tag
+// const button2 = document.getElementsByTagName("button");
+// console.log(title, items, button2);
+
+// Template literals
+// let firstname = "umesh";
+// console.log(`Hello, ${firstname} `);
+
+// let msg = ` This is line 1
+// This is line 2`;
+// console.log(msg);
+
+// let a = 2,
+//   b = 4;
+
+// console.log(`Sum = ${a + b}`);
+
+// function greet() {
+//   return "Welcome";
+// }
+
+// console.log(`Message: ${greet()}`);
+
+// Destructure
+// const colors = ["red", "green", "blue"];
+// const [a, c, b] = colors;
+// console.log(a, b);
+
+// object destruture
+
+// const user = { name: "sudanshu", age: 24 };
+// const { age } = user;
+// console.log(age);
+
+// const [x = 10, y]=[5]
+// console.log(x, y);
+
+const emp = {
+  id: 101,
+  address: { city: "pune", pin: 413001 },
+};
+
+const {
+  id,
+  address: { city },
+} = emp;
+
+console.log(id, city);
+
+// Fetch
 

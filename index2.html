@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
   </head>
   <body>
     <!-- <div class="container" id="containerID">
@@ -190,6 +190,68 @@
     <ol>
       <li>list 1</li>
     </ol> -->
+    <!-- <main>
+      <h2 id="main-title">Title</h2>
+      <h2 id="main-title2">Title</h2>
+      <h2 id="main-title3">Title</h2>
+      <p class="para"></p>
+      <ul>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+        <li class="list-item"></li>
+      </ul>
+      <button class="btn">Submit</button>
+      <button class="btn">Submit</button>
+      <button class="btn">Submit</button>
+    </main> -->
+
+    <!-- <h2 id="header">Sample Text</h2>
+    <button id="changebtn">Change header</button> -->
+
+    <!-- <button id="colorBtn">Change Background</button> -->
+
+    <form id="loginform">
+      <input type="text" id="username" placeholder="Enter username" />
+      <button type="submit" id="btn">Submit</button>
+    </form>
+    <form id="signupform">
+      <input type="text" id="username1" placeholder="Enter username" />
+      <button type="submit" id="btn">Submit</button>
+    </form>
+    <p id="msg"></p>
   </body>
-  <script src="script2.js"></script>
+  <script>
+    document.getElementById("loginform").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const user = document.getElementById("username").value;
+      document.getElementById("msg").textContent =
+        "Form submitted Username: " + user;
+    });
+    // document.getElementById("signupform").addEventListener("submit", (e) => {
+    //   e.preventDefault();
+    //   const user = document.getElementById("username1").value;
+    //   document.getElementById("msg").textContent =
+    //     "Form submitted Username: " + user;
+    // });
+
+    // document.getElementById("colorBtn").addEventListener("click", () => {
+    //   document.body.style.backgroundColor =
+    //     document.body.style.backgroundColor === "lightblue"
+    //       ? "white"
+    //       : "lightblue";
+    // });
+
+    // const button = document.getElementById("changebtn");
+    // button.addEventListener("mouseleave", function () {
+    //   const header = document.getElementById("header");
+    //   header.textContent = "Text updated";
+    //   header.style.color = "red";
+    //   header.style.fontSize = "28px";
+    //   header.classList.add("highlight");
+    //   alert("Button was clicked");
+    // });
+  </script>
+  <!-- <script src="script2.js"></script> -->
 </html>
